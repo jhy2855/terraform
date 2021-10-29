@@ -29,3 +29,11 @@ resource "aws_instance" "jhy_weba" {
     Name = "jhy-weba"
   }
 }
+
+resource "aws_eip" "jhy_web_eip" {
+  vpc = true
+  instance                  = aws_instance.jhy_weba.id
+  associate_with_private_ip = "10.0.0.11"
+  depends_on                = [aws_internet_gateway.jhy_ig]    
+  
+}
