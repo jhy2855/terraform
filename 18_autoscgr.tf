@@ -12,5 +12,5 @@ resource "aws_autoscaling_group" "jhy_at_sg" {
   desired_capacity          = 2
   force_delete              = true
   launch_configuration      = aws_launch_configuration.jhy_lacf.name
-  vpc_zone_identifier       = [aws_subnet.jhy-puba.id,aws_subnet.jhy-pubc.id]
+  vpc_zone_identifier       = [aws_subnet.jhy_puba.id,aws_subnet.jhy_pubc.id]
   }
